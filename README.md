@@ -24,6 +24,6 @@ On creation of file, the file object is propagated to all nodes so that they kno
 We use the following python libraries socket [3], thread [4], time [5], pickle[6], copy[7], deque[8] to implement network connections, multi-threading, waiting, serializing, copying objects and maintaining queues respectively.
 The program reads input from tree.txt and iplist.txt in which we store information about the connectivity between nodes and their IP addresses with port.
 
-## Deployment Details:
+## Deployment Details
 
 The nodes are distributed over three EC2 t3 micro­instances [8] deployed in US­West, Ireland and Asia (Mumbai ­ India) regions to simulate network lags and comply with the project requirements [1]. Multiple nodes can run over the same EC2 instance. The deployment of a node over instance can be configured through the iplist.txt file. Two nodes on the same instance are differentiated by the port number they listen on.
