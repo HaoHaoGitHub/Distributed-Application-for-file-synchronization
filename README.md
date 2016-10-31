@@ -12,10 +12,12 @@ My application used Raymond's tree-based algorithm for mutual exclusion to ensur
 ## Implementation Details
 
 The program was coded in Python 2.7.6 [2]. We do not use traditional files to store data, this is in light of reducing the overhead of I/O operations. Each file is an object of class TokenFile. The object contains the following data structures:
-    * Value - The string contents of the file itself
-    * Request Queue - A queue of requests made by nodes for that file
-    * Operations Queue - A queue of operations the node would want to perform on the file Name ­ Name of the file
-    * InUse - Whether the file is in use or not. We wait for two seconds if the requested file is currently in use, in hopes that within two seconds the operation will be done. Although more sophisticated ways can be applied.
+
+1. Value - The string contents of the file itself
+2. Request Queue - A queue of requests made by nodes for that file
+3. Operations Queue - A queue of operations the node would want to perform on the 
+4. file Name  Name of the file
+5. InUse - Whether the file is in use or not. We wait for two seconds if the requested file is currently in use, in hopes that within two seconds the operation will be done. Although more sophisticated ways can be applied.
     
 These data structures are maintained individually for each node, for each object.
 On creation of file, the file object is propagated to all nodes so that they know who the who the holder is. However, the node can access the file only if they are the holder. The files(tokens) requested propagate through the network through channels allowed by the tree.
