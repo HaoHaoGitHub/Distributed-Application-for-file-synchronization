@@ -2,10 +2,10 @@
 
 ## Introduction
 For this project, I implemented a distributed application for synchronizing access to small files. The system consists of N processes. Each process provide a user-interface (text-based is fine) that supports the following operations:
-1. create <filename>: create an empty file named <filename>
-2. delete <filename>: deletes file named <filename>
-3. read <filename>: displays the contents of <filename>
-4. append <filename><line>: appends a <line> to <filename>
+1. create “filename”: create an empty file named “filename”
+2. delete “filename”: deletes file named “filename”
+3. read “filename”: displays the contents of “filename”
+4. append “filename”“line": appends a "line" to "filename"
 
 My application used Raymond's tree-based algorithm for mutual exclusion to ensure one-at-a-time access. The network is connected in a logical tree, and communication can only take place between neighbors in the tree. Each file will serve as a token in its own instance of Raymond's algorithm.  
 
